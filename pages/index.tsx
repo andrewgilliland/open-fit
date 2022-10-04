@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <main className="pt-24">
         <section className="max-w-4xl mx-auto">
           <h1 className="font-bold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-            Fitness Programs
+            Open Fit
           </h1>
           <div className="space-y-4 mt-4">
             <div className="h-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500" />

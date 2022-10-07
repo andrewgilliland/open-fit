@@ -12,6 +12,10 @@ export const ProgramCard = () => {
           Push-Pull-Legs
         </h3>
         <div className="mt-2">
+          <h4 className="text-gray-200 text-xs">Duration</h4>
+          <p className="text-white">8 weeks</p>
+        </div>
+        <div className="mt-2">
           <h4 className="text-gray-200 text-xs">Workouts Per Week</h4>
           <p className="text-white">4 workouts</p>
         </div>

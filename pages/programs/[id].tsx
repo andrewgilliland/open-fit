@@ -7,6 +7,7 @@ import Program from '../../components/Program'
 const ProgramPage: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
+  // @ts-ignore
   const { name, workouts, theme } = programs[id]
   console.log(id)
 
@@ -15,7 +16,10 @@ const ProgramPage: NextPage = () => {
       <div className="py-24">
         <section className="max-w-4xl mx-auto">
           <H1 theme={theme}>{name}</H1>
-          <Program program={programs[id]} />
+          <Program
+            // @ts-ignore
+            program={programs[id]}
+          />
         </section>
       </div>
     </div>

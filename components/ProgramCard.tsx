@@ -3,6 +3,7 @@ import { ArrowRightCircleIcon } from '@heroicons/react/24/outline'
 import { animated } from 'react-spring'
 import { useBoop } from '../lib/hooks/use-boop'
 
+// @ts-ignore
 export const ProgramCard = ({ program }: { program }) => {
   const [style, trigger] = useBoop({ x: 2 })
   const { name, theme, duration, workoutsPerWeek, id } = program
@@ -32,11 +33,15 @@ export const ProgramCard = ({ program }: { program }) => {
         <Link href={`programs/${id}`}>
           <a>
             <button
+              // @ts-ignore
               onMouseEnter={trigger}
               className="flex justify-center items-center text-white bg-black/20 rounded-lg pl-4 pr-3 py-2 space-x-2 transition hover:bg-black/30"
             >
               <span>Get Started</span>
-              <animated.div style={style}>
+              <animated.div
+                // @ts-ignore
+                style={style}
+              >
                 <ArrowRightCircleIcon className="text-white h-5 w-5 " />
               </animated.div>
             </button>

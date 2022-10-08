@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { programs } from '../data/programs'
-import Program from '../components/Program'
 import { ProgramCard } from '../components/ProgramCard'
 
 const Home: NextPage = () => {

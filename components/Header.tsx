@@ -15,7 +15,7 @@ export const Header = () => {
       </div>
       <div className="flex items-center">
         <animated.a
-          onMouseEnter={trigger}
+          // @ts-ignore
           style={style}
           href="https://github.com/andrewgilliland/open-fit"
         >

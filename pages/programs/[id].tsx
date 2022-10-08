@@ -4,12 +4,18 @@ import { programs } from '../../data/programs'
 import { H1 } from '../../components/H1'
 import Program from '../../components/Program'
 
-const ProgramPage: NextPage = () => {
+export async function getServerSideProps() {
+  return {
+    props: { programs }, // will be passed to the page component as props
+  }
+}
+
+// @ts-ignore
+const ProgramPage: NextPage = ({ programs }: { program: any }) => {
   const router = useRouter()
   const { id } = router.query
   // @ts-ignore
   const { name, workouts, theme } = programs[id]
-  console.log(id)
 
   return (
     <div className="">

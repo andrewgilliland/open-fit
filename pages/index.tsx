@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { H1 } from '../components/H1'
 import { programs } from '../data/programs'
 import { ProgramCard } from '../components/ProgramCard'
 
@@ -13,13 +14,11 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="py-24">
-        <section className="max-w-4xl mx-auto">
-          <h1 className="font-muli font-semibold text-[116px] text-transparent leading-[132px] tracking-[-5.336px] bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-            <div className="text-white"> Workout</div>
-            <div>Programs</div>
-          </h1>
-
-          <div className="grid grid-cols-3 gap-8 mt-8">
+        <section className="max-w-4xl mx-auto px-8">
+          <H1 theme={['violet', 'fuchsia']}>
+            <div className="text-white">Workout</div>Programs
+          </H1>
+          <div className="grid sm:grid-cols-3 gap-8 mt-8">
             {Object.values(programs).map((program, i) => (
               <ProgramCard key={i} program={program} />
             ))}

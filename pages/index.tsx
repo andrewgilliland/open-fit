@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { programOne, programTwo } from '../data/programs'
+import { programs } from '../data/programs'
 import Program from '../components/Program'
-import { Header } from '../components/Header'
 import { ProgramCard } from '../components/ProgramCard'
 
 const Home: NextPage = () => {
@@ -14,8 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <main className="pt-24">
+      <div className="py-24">
         <section className="max-w-4xl mx-auto">
           <h1 className="font-muli font-semibold text-[116px] text-transparent leading-[132px] tracking-[-5.336px] bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
             <div className="text-white"> Workout</div>
@@ -23,40 +21,24 @@ const Home: NextPage = () => {
           </h1>
 
           <div className="grid grid-cols-3 gap-8 mt-8">
-            {/* <div className="font-muli flex flex-col justify-between aspect-square rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-8">
-              <div>
-                <h3 className="text-white text-[28px] font-semibold tracking-[-0.896px]">
-                  Push-Pull-Legs
-                </h3>
-                <div className="mt-2">
-                  <h4 className="text-gray-200 text-xs">Workouts Per Week</h4>
-                  <p className="text-white">4 workouts</p>
-                </div>
-              </div>
-              <div>
-                <button className="text-white bg-black/20 rounded-lg px-4 py-2 transition hover:bg-black/30">
-                  Get Started
-                </button>
-              </div>
-            </div> */}
-            <ProgramCard />
-            <div className="aspect-square rounded-lg bg-gradient-to-r from-sky-500 to-indigo-500" />
+            {Object.values(programs).map((program, i) => (
+              <ProgramCard key={i} program={program} />
+            ))}
+
             <div className="aspect-square rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500" />
             <div className="aspect-square rounded-lg bg-gradient-to-r from-purple-500 to-pink-500" />
+            <div className="aspect-square rounded-lg bg-gradient-to-r from-teal-500 to-sky-500" />
+            <div className="aspect-square rounded-lg bg-gradient-to-r from-pink-500 to-red-500" />
           </div>
 
-          <div className="space-y-4 mt-4">
-            <div className="h-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500" />
-            <Program program={programOne} />
-            <div className="h-2 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-500" />
-            <Program program={programTwo} />
-            <div className="h-2 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500" />
-            <div className="h-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500" />
-          </div>
+          {/* <div className="space-y-4 mt-4">
+            <div className="rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500" />
+            <div className="rounded-lg bg-gradient-to-r from-sky-500 to-indigo-500" />
+            <div className="rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500" />
+            <div className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500" />
+          </div> */}
         </section>
-      </main>
-
-      <footer className=""></footer>
+      </div>
     </div>
   )
 }
